@@ -1,0 +1,51 @@
+﻿
+<div class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <h4 class="modal-title">Add New Stock</h4>
+                <button class="close" ng-click="$hide()">&times;</button>
+            </div>
+            
+            <form name="addStockForm">
+                
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Symbol</label>
+                        <input type="text"
+                               class="form-control"
+                               placeholder="Stock Symbol"
+                               ng-model="newStock.company"
+                               ng-options="company as company.label for company in companies"
+                               bs-typeahead
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <label>Shares Owned</label>
+                        <input type="number"
+                               class="form-control"
+                               placeholder="# Shares Owned"
+                               ng-model="newStock.shares"
+                               required>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="submit"
+                            class="btn btn-primary"
+                            ng-click="addStock()"
+                            ng-disabled="!addStockForm.$valid">
+                        Add
+                    </button>
+                    <button class="btn btn-primary"
+                            ng-click="$hide()">
+                        Cancel
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>

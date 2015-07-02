@@ -1,0 +1,31 @@
+﻿
+<div class="panel panel-primary">
+
+    <div class="panel-heading">
+        <span class="glyphicon glyphicon-eye-open"></span>
+        &nbsp;
+        Watchlists
+        <!-- [1] invoke showAddWatchlistModal -->
+        <button class="btn btn-primary btn-xs pull-right" ng-click="showAddWatchlistModal()">
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+    </div>
+
+    <div class="panel-body">
+        <!-- show help text if no watchlists -->
+        <div ng-if="!watchlists.length" class="text-center">
+            You have no watchlists set up.
+            <br />
+            Use <span class="glyphicon glyphicon-plus"></span> to create a new watchlist.
+        </div>
+        <div class="list-group">
+            <!-- create links for all watchlists -->
+            <a class="list-group-item" ng-repeat="watchlist in watchlists track by $index" ng-class="{ active: watchlist.id == currentWatchlistId }" ng-click="goToWatchlist(watchlist.id)">
+                <!-- track by $index is so angular does not complain if the array contains identical objects -->
+                {{watchlist.name}}
+                <button class="close" ng-click="deleteWatchlist(watchlist)">&times;</button>
+            </a>
+        </div>
+    </div>
+
+</div>

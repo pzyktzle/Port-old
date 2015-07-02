@@ -1,0 +1,33 @@
+﻿
+<div class="row">
+    
+    <!-- left column-->
+    <div class="col-lg-3">
+        <watchlist-panel></watchlist-panel>
+    </div>
+
+    <!-- right column-->
+    <div class="col-lg-9">
+        <div class="panel panel-primary">
+            
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-list"></span>
+                &nbsp;
+                {{watchlist.description}}
+                <button class="btn btn-primary btn-xs pull-right" ng-click="showNewStockModal()">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+            </div>
+            
+            <div class="panel-body table-responsive">
+                <div ng-hide="stocks.length" class="text-center">
+                    <p>There are no stocks in this watchlist.</p>
+                </div>
+                <!-- loop over all stocks -->
+                <stock-table ng-show="stocks.length" watchlist="watchlist"></stock-table>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,41 @@
+.table {
+    text-align: center;
+}
+
+.table th {
+    text-align: center;
+}
+
+tfoot {
+    font-weight: bold;
+}
+
+a {
+    cursor: pointer;
+}
+
+span[disabled="disabled"] a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Dashboard View Styles */
+.well {
+    text-align: center;
+}
+
+/* styles for ngAnimate */
+.change-up-add {
+transition: background-color linear 1.5s;
+background-color: green;
+}
+.change-up-add.change-up-add-active {
+background-color: #303030;
+}
+.change-down-add {
+transition: background-color linear 1.5s;
+background-color: red;
+}
+.change-down-add.change-down-add-active {
+background-color: #303030;
+}
